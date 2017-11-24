@@ -1,0 +1,19 @@
+{
+  "movies": [
+    {
+      "title": "Harry Potter and the YERAWIZARDHARRY",
+      "year": "2017",
+      "genre": "Action"
+    },
+    {
+      "title": "Harry Potter and the HARRYDIDJAPUTYERNAMEINTHEGOBLET",
+      "year": "2017",
+      "genre": "Action"
+    },
+    {
+      "title": "Star Wars",
+      "year": "2017",
+      "genre": "Action"
+    }
+  ]
+}
