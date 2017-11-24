@@ -1,5 +1,5 @@
-const CLIENT_ID = "552410470069-740ji948mbmsp75mml44lbvrd109goop.apps.googleusercontent.com"; //TODO
+const constants = require('./constants.js');
 
 exports.index = function(req, res) {
-  res.render("index", {client_id: CLIENT_ID});
+  res.render("index", {client_id: constants.CLIENT_ID});
 }

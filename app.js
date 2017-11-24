@@ -1,10 +1,10 @@
-var express = require('express');
-var app = module.exports = express();
-var bodyParser = require('body-parser');
-var handlebars = require('express-handlebars');
+const express = require('express');
+const app = module.exports = express();
+const bodyParser = require('body-parser');
+const handlebars = require('express-handlebars');
 
-var routes = require('./routes.js');
-var api = require('./api.js');
+const routes = require('./routes.js');
+const api = require('./api.js');
 
 app.set('port', 8000);
 app.use(require('morgan')('dev'));

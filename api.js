@@ -1,4 +1,4 @@
-const CLIENT_ID = "552410470069-740ji948mbmsp75mml44lbvrd109goop.apps.googleusercontent.com"; //TODO
+const constants = require('./constants.js');
 const auth = new (require('google-auth-library'));
 
 // The user should already be signed in to Google and have authorized the app.
@@ -7,9 +7,9 @@ const auth = new (require('google-auth-library'));
 // add them to the database.
 exports.googlesignin = function(req, res) {
   const id_token = req.body.id_token;
-  const client = new auth.OAuth2(CLIENT_ID, '', '');
+  const client = new auth.OAuth2(constants.CLIENT_ID, '', '');
   client.verifyIdToken(
-    id_token, [CLIENT_ID],
+    id_token, [constants.CLIENT_ID],
     (err, login) => {
       if (err) {
         res.send("Error", 500);
