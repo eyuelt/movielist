@@ -1,6 +1,7 @@
 var express = require('express');
 var app = module.exports = express();
 var bodyParser = require('body-parser');
+var handlebars = require('express-handlebars');
 
 var routes = require('./routes.js');
 var api = require('./api.js');
@@ -8,6 +9,11 @@ var api = require('./api.js');
 app.set('port', 8000);
 app.use(require('morgan')('dev'));
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true})); //TODO: remove this
+app.engine('handlebars', handlebars());
+app.set('view engine', 'handlebars');
+
+app.post('/api/googlesignin', api.googlesignin);
 
 app.get('/', routes.index);
 
