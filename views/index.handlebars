@@ -11,7 +11,10 @@
       function onSignIn(googleUser) {
         var id_token = googleUser.getAuthResponse().id_token;
         console.log('onSignIn.');
-        sendidtokentobackend(id_token);
+        var profile = googleUser.getBasicProfile();
+        var data = 'id_token=' + id_token + '&name=' + profile.getName() +
+          '&email=' + profile.getEmail() + '&img_url=' + profile.getImageUrl();
+        sendDataToBackend(data);
       }
       function signOut() {
         var auth2 = gapi.auth2.getAuthInstance();
@@ -19,14 +22,14 @@
           console.log('User signed out.');
         });
       }
-      function sendidtokentobackend(id_token) {
+      function sendDataToBackend(data) {
         var xhr = new XMLHttpRequest();
         xhr.open('POST', 'http://localhost:8000/api/googlesignin');
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onload = function() {
           console.log('Signed in as: ' + xhr.responseText);
         };
-        xhr.send('id_token=' + id_token);
+        xhr.send(data);
       }
     </script>
   </body>

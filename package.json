@@ -4,6 +4,7 @@
   "description": "Make lists of movies.",
   "main": "app.js",
   "scripts": {
+    "start": "bash ./models/run_db.sh && node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -13,6 +14,9 @@
     "express-handlebars": "^3.0.0",
     "google-auth-library": "^0.12.0",
     "gulp": "^3.9.1",
-    "morgan": "^1.9.0"
+    "morgan": "^1.9.0",
+    "pg": "^6.4.2",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.22.15"
   }
 }
